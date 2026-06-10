@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 from google import genai
 import json
 import re
+import google.genai
 
 #api_key = os.getenv("GOOGLE_API_KEY")
 api_key = os.getenv("GOOGLE_API_KEY")
@@ -13,6 +14,8 @@ if not api_key:
     raise Exception("GOOGLE_API_KEY not found in environment")
 
 print("ENV KEY:", os.getenv("GOOGLE_API_KEY"))
+print("GENAI VERSION:", google.genai.__version__)
+
 client = genai.Client(api_key=api_key)
 
 app = FastAPI(
