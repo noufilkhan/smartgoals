@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+print("ENV KEY:", os.getenv("GOOGLE_API_KEY"))
+
 api_key = os.getenv("GOOGLE_API_KEY")
 client = genai.Client(api_key=api_key)
 
