@@ -6,7 +6,7 @@ from google import genai
 import json
 import re
 
-api_key = "AIzaSyCNZX1o9LTmydLEbxJbNcFDrAZiY6E7tOg" 
+api_key = os.getenv("GOOGLE_API_KEY")
 client = genai.Client(api_key=api_key)
 
 app = FastAPI(
