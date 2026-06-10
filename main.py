@@ -18,6 +18,8 @@ print("GENAI VERSION:", google.genai.__version__)
 
 client = genai.Client(api_key=api_key)
 
+print("CLIENT CREATED OK")
+
 app = FastAPI(
     title="Job Description Generator API",
     description="API to generate formatted Job Descriptions based on Designation and Company Profile."
@@ -31,7 +33,7 @@ class JobDescriptionRequest(BaseModel):
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to the SMART Goal Generator API!"}
+    return {"message": "Welcome to the SMART Goal Generator API! With Key [" + api_key + "] and GenAI version [" + google.genai.__version__ + "]"}
 
 
 @app.post("/generate-goals")
