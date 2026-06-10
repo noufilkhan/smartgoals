@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 from google import genai
 import json
 import re
+from dotenv import load_dotenv
 
 load_dotenv()
 
